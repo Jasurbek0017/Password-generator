@@ -1,14 +1,19 @@
+// Call need items
 let input = document.querySelector('input'),
-    btn = document.querySelector('#generate');
+    btn = document.querySelector('#generate'),
+    number = document.querySelector('.number');
 
 
 
-    btn.addEventListener('click', () => {
+// Input length of password
+btn.addEventListener('click', () => {
         let ii = input.value;
-     input.value = generatePassword(8);
- })
+     input.value = generatePassword(number.value);
+})
+passworLength = number.value
 
- function generatePassword(length = 8){
+// Generate password
+ function generatePassword(length = number.value){
      let chartset = 'ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz1234567890@#$';
 
      let password = '';
@@ -20,6 +25,5 @@ let input = document.querySelector('input'),
 
      }
      return password;
-
  }
 
